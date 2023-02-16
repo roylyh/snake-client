@@ -16,6 +16,16 @@ const connect = function() {
     conn.write("Name: ROY");
   }
   );
+  conn.on("connect",() => {
+
+    setInterval(()=>{
+      conn.write("Move: up");
+    },1000);
+    
+    
+  }
+  );
+
 
   // event data handler
   conn.on("data",(data) => {
