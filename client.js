@@ -18,14 +18,13 @@ const connect = function() {
   );
   conn.on("connect",() => {
 
-    setInterval(()=>{
-      conn.write("Move: up");
-    },1000);
+    // setInterval(()=>{
+    //   conn.write("Move: up");
+    // },1000);
     
     
   }
   );
-
 
   // event data handler
   conn.on("data",(data) => {
