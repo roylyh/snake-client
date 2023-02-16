@@ -16,15 +16,14 @@ const connect = function() {
     conn.write("Name: ROY");
   }
   );
-  conn.on("connect",() => {
+  // conn.on("connect",() => {
 
-    // setInterval(()=>{
-    //   conn.write("Move: up");
-    // },1000);
+  //   // setInterval(()=>{
+  //   //   conn.write("Move: up");
+  //   // },1000);
     
-    
-  }
-  );
+  // }
+  // );
 
   // event data handler
   conn.on("data",(data) => {
