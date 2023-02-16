@@ -6,7 +6,7 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf-8");
   stdin.resume();
-  console.log("stdin:",stdin);
+  // console.log("stdin:",stdin);
   stdin.on("data",handleUserInput);
   return stdin;
 };
