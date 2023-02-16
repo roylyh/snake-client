@@ -17,11 +17,9 @@ const connect = function() {
   }
   );
   // conn.on("connect",() => {
-
   //   // setInterval(()=>{
   //   //   conn.write("Move: up");
   //   // },1000);
-    
   // }
   // );
 
@@ -30,6 +28,10 @@ const connect = function() {
     console.log("data:",data);
   }
   );
+
+  conn.on("error", (err) => {
+    console.log("error:",err);
+  });
 
   return conn;
 };
