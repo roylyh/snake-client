@@ -1,5 +1,3 @@
-const { Console } = require("console");
-
 let connection;
 
 const setupInput = function(conn) {
@@ -8,6 +6,7 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf-8");
   stdin.resume();
+  console.log("stdin:",stdin);
   stdin.on("data",handleUserInput);
   return stdin;
 };
@@ -30,7 +29,17 @@ const handleUserInput = function(key) {
   case "\u0003":
     process.exit();
     break;
+  case "S":
+    // Press S to say something
+    this.setRawMode(false);
+    break;
+    // Press z and enter to move the snake
+  case "z\n":
+    this.setRawMode(true);
+    break;
   default:
+    if (!this.isRaw) connection.write(`Say: ${key}`);
+    console.log(key);
     break;
   }
 };
